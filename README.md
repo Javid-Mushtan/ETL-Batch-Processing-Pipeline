@@ -1,9 +1,3 @@
-
-Here's the **FIXED VERSION** with all corrections:
-
----
-
-```markdown
 # 🚀 Employee ETL Data Pipeline  
 **Python • Faker • Google Cloud • Medallion Architecture**
 
@@ -28,7 +22,7 @@ The pipeline simulates a real-world enterprise data flow, focusing on **data qua
 
 ## 📊 Architecture Overview
 
-```mermaid
+
 graph TD
     A[Python + Faker] --> B[GCS: Bronze Layer<br/>Raw CSV Data]
     B --> C[Data Fusion: Silver Layer<br/>Cleaned & Validated]
