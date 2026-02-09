@@ -11,13 +11,29 @@ This pipeline simulates a **real-world enterprise data engineering workflow**.
 ## 🧠 Pipeline Architecture (High-Level Flow)
 
 ```text
-flowchart TD
-    A[Faker Library<br/>Synthetic CSV Data] --> B[GCS – Bronze Layer<br/>Raw CSV Data Storage]
-    B --> C[Data Fusion – Silver Layer<br/>Filtering • Masking • Data Validation]
-    C --> D[BigQuery – Gold Layer<br/>Analytics-Ready Data]
-    
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#d4af37,stroke:#333,stroke-width:2px
-    style C fill:#c0c0c0,stroke:#333,stroke-width:2px
-    style D fill:#ffd700,stroke:#333,stroke-width:2px
-
+┌───────────────┐
+│ Faker Library │
+│ (Synthetic    │
+│  CSV Data)    │
+└───────┬───────┘
+        │
+        ▼
+┌────────────────────────┐
+│   GCS – Bronze Layer   │
+│ Raw CSV Data Storage   │
+└──────────┬─────────────┘
+           │
+           ▼
+┌────────────────────────┐
+│ Data Fusion – Silver   │
+│ Filtering              │
+│ Masking (PII)          │
+│ Data Validation        │
+└──────────┬─────────────┘
+           │
+           ▼
+┌────────────────────────┐
+│ BigQuery – Gold Layer  │
+│ Analytics-Ready Data   │
+│ Query & Reporting      │
+└────────────────────────┘
